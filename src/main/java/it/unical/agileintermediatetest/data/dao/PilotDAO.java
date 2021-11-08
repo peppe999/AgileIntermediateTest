@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AirlineDAO extends JpaRepository<AirlineDAO, Long> {
+public interface PilotDAO extends JpaRepository<PilotDAO, Long> {
 }

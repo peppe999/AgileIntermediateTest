@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"departure_date", "from"}))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"departure_date", "from_"}))
 @Entity(name = "Flight")
 public class Flight {
     @Id
@@ -18,12 +18,12 @@ public class Flight {
     private Integer cod;
 
     @Basic(optional = false)
-    @Column(name = "from")
-    private String from;
+    @Column(name = "from_")
+    private String from_;
 
     @Basic(optional = false)
-    @Column(name = "to")
-    private String to;
+    @Column(name = "to_")
+    private String to_;
 
     @Basic(optional = false)
     @Column(name = "departure_date")
@@ -51,11 +51,11 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(Long id, Integer cod, String from, String to, LocalDateTime departureDate, LocalDateTime arrivalDate, Boolean isCancelled, List<CabinCrew> cabinCrews, Airplane airplane, List<Ticket> tickets) {
+    public Flight(Long id, Integer cod, String from_, String to_, LocalDateTime departureDate, LocalDateTime arrivalDate, Boolean isCancelled, List<CabinCrew> cabinCrews, Airplane airplane, List<Ticket> tickets) {
         this.id = id;
         this.cod = cod;
-        this.from = from;
-        this.to = to;
+        this.from_ = from_;
+        this.to_ = to_;
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
         this.isCancelled = isCancelled;
@@ -80,20 +80,20 @@ public class Flight {
         this.cod = cod;
     }
 
-    public String getFrom() {
-        return from;
+    public String getFrom_() {
+        return from_;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setFrom_(String from_) {
+        this.from_ = from_;
     }
 
-    public String getTo() {
-        return to;
+    public String getTo_() {
+        return to_;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setTo_(String to_) {
+        this.to_ = to_;
     }
 
     public LocalDateTime getDepartureDate() {
@@ -149,11 +149,11 @@ public class Flight {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
-        return id.equals(flight.id) && cod.equals(flight.cod) && from.equals(flight.from) && to.equals(flight.to) && departureDate.equals(flight.departureDate) && arrivalDate.equals(flight.arrivalDate) && isCancelled.equals(flight.isCancelled) && cabinCrews.equals(flight.cabinCrews) && airplane.equals(flight.airplane) && tickets.equals(flight.tickets);
+        return id.equals(flight.id) && cod.equals(flight.cod) && from_.equals(flight.from_) && to_.equals(flight.to_) && departureDate.equals(flight.departureDate) && arrivalDate.equals(flight.arrivalDate) && isCancelled.equals(flight.isCancelled) && cabinCrews.equals(flight.cabinCrews) && airplane.equals(flight.airplane) && tickets.equals(flight.tickets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cod, from, to, departureDate, arrivalDate, isCancelled, cabinCrews, airplane, tickets);
+        return Objects.hash(id, cod, from_, to_, departureDate, arrivalDate, isCancelled, cabinCrews, airplane, tickets);
     }
 }
