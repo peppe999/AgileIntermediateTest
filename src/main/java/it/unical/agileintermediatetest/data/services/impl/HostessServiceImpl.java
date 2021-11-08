@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HostessServiceImpl implements HostessService {
-    private final HostessDAO HostessDAO;
+    private final HostessDAO hostessDAO;
 
     @Autowired
-    public HostessServiceImpl(HostessDAO HostessDAO) {
-        this.HostessDAO = HostessDAO;
+    public HostessServiceImpl(HostessDAO hostessDAO) {
+        this.hostessDAO = hostessDAO;
     }
 }

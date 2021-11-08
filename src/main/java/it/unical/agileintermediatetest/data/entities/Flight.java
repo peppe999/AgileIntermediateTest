@@ -19,11 +19,11 @@ public class Flight {
 
     @Basic(optional = false)
     @Column(name = "from_")
-    private String from_;
+    private String fromD;
 
     @Basic(optional = false)
-    @Column(name = "to_")
-    private String to_;
+    @Column(name = "toD")
+    private String toD;
 
     @Basic(optional = false)
     @Column(name = "departure_date")
@@ -45,17 +45,17 @@ public class Flight {
     @JoinColumn(name = "Airplane_id")
     private Airplane airplane;
 
-    @OneToMany(mappedBy = "flight")
+    @OneToMany(mappedBy = "flight", fetch = FetchType.EAGER)
     private List<Ticket> tickets;
 
     public Flight() {
     }
 
-    public Flight(Long id, Integer cod, String from_, String to_, LocalDateTime departureDate, LocalDateTime arrivalDate, Boolean isCancelled, List<CabinCrew> cabinCrews, Airplane airplane, List<Ticket> tickets) {
+    public Flight(Long id, Integer cod, String fromD, String toD, LocalDateTime departureDate, LocalDateTime arrivalDate, Boolean isCancelled, List<CabinCrew> cabinCrews, Airplane airplane, List<Ticket> tickets) {
         this.id = id;
         this.cod = cod;
-        this.from_ = from_;
-        this.to_ = to_;
+        this.fromD = fromD;
+        this.toD = toD;
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
         this.isCancelled = isCancelled;
@@ -80,20 +80,20 @@ public class Flight {
         this.cod = cod;
     }
 
-    public String getFrom_() {
-        return from_;
+    public String getFromD() {
+        return fromD;
     }
 
-    public void setFrom_(String from_) {
-        this.from_ = from_;
+    public void setFromD(String fromD) {
+        this.fromD = fromD;
     }
 
-    public String getTo_() {
-        return to_;
+    public String getToD() {
+        return toD;
     }
 
-    public void setTo_(String to_) {
-        this.to_ = to_;
+    public void setToD(String toD) {
+        this.toD = toD;
     }
 
     public LocalDateTime getDepartureDate() {
@@ -149,11 +149,11 @@ public class Flight {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
-        return id.equals(flight.id) && cod.equals(flight.cod) && from_.equals(flight.from_) && to_.equals(flight.to_) && departureDate.equals(flight.departureDate) && arrivalDate.equals(flight.arrivalDate) && isCancelled.equals(flight.isCancelled) && cabinCrews.equals(flight.cabinCrews) && airplane.equals(flight.airplane) && tickets.equals(flight.tickets);
+        return id.equals(flight.id) && cod.equals(flight.cod) && fromD.equals(flight.fromD) && toD.equals(flight.toD) && departureDate.equals(flight.departureDate) && arrivalDate.equals(flight.arrivalDate) && isCancelled.equals(flight.isCancelled) && cabinCrews.equals(flight.cabinCrews) && airplane.equals(flight.airplane) && tickets.equals(flight.tickets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cod, from_, to_, departureDate, arrivalDate, isCancelled, cabinCrews, airplane, tickets);
+        return Objects.hash(id, cod, fromD, toD, departureDate, arrivalDate, isCancelled, cabinCrews, airplane, tickets);
     }
 }

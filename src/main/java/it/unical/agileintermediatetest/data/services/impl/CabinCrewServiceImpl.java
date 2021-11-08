@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CabinCrewServiceImpl implements CabinCrewService {
-    private final CabinCrewDAO CabinCrewDAO;
+    private final CabinCrewDAO cabinCrewDAO;
 
     @Autowired
-    public CabinCrewServiceImpl(CabinCrewDAO CabinCrewDAO) {
-        this.CabinCrewDAO = CabinCrewDAO;
+    public CabinCrewServiceImpl(CabinCrewDAO cabinCrewDAO) {
+        this.cabinCrewDAO = cabinCrewDAO;
     }
 }

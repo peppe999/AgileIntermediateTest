@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity(name = "Hostess")
 public class Hostess extends CabinCrew {
-    enum Gender {
+    public enum Gender {
         MALE,
         FEMALE
     }

@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CopilotServiceImpl implements CopilotService {
-    private final CopilotDAO CopilotDAO;
+    private final CopilotDAO copilotDAO;
 
     @Autowired
-    public CopilotServiceImpl(CopilotDAO CopilotDAO) {
-        this.CopilotDAO = CopilotDAO;
+    public CopilotServiceImpl(CopilotDAO copilotDAO) {
+        this.copilotDAO = copilotDAO;
     }
 }

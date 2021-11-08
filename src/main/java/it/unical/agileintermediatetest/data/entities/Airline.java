@@ -20,7 +20,7 @@ public class Airline {
     @Column(name = "nation")
     private String nation;
 
-    @Column(name = "name")
+    @Column(name = "address")
     private String address;
 
     @Column(name = "logo")

@@ -32,7 +32,18 @@ public class Ticket {
     @JoinColumn(name = "Passenger_id")
     private Passenger passenger;
 
+    @Transient
+    private transient Boolean isWinner;
+
     public Ticket() {
+    }
+
+    public Boolean getIsWinner() {
+        return isWinner;
+    }
+
+    public void setIsWinner(Boolean winner) {
+        isWinner = winner;
     }
 
     public Ticket(Long id, Integer cod, Double price, LocalDateTime purchaseDate, Flight flight, Passenger passenger) {

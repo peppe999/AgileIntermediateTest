@@ -7,7 +7,7 @@ import java.util.Objects;
 @Entity(name = "Airplane")
 public class Airplane {
 
-    enum Type {
+    public enum Type {
         BOING_777,
         BOING_787,
         AIRBUS_A350,
